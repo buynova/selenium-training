@@ -5,7 +5,7 @@ from selenium import webdriver
 
 @pytest.fixture
 def driver(request):
-    wd = webdriver.Chrome('C:\\Tools\\chromedriver.exe')
+    wd = webdriver.Chrome()
     request.addfinalizer(wd.quit)
     return wd
 
