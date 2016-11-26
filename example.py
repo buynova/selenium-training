@@ -12,4 +12,6 @@ def driver(request):
 
 def test_example(driver):
     driver.get("http://www.youtube.com/")
+    driver.find_element_by_name('search_query').send_keys('котики')
+    driver.find_element_by_id('search-btn').click()
     time.sleep(3)
