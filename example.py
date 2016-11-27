@@ -8,7 +8,11 @@ def driver(request):
     # options = webdriver.ChromeOptions()
     # options.add_argument('start-fullscreen')
     # wd = webdriver.Chrome(chrome_options=options)
-    wd = webdriver.Firefox(firefox_binary='C:\\Program Files\\Nightly\\firefox.exe')
+    wd = webdriver.Firefox(
+        firefox_binary='C:\\Program Files\\Mozilla Firefox\\firefox.exe',
+        capabilities={'marionette': 'true'}
+    )
+    # wd = webdriver.Firefox(capabilities={'marionette': 'true'})
     # wd = webdriver.Ie()
     # wd = webdriver.Edge()
     # print(wd.capabilities)
