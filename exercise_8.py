@@ -10,7 +10,7 @@ def driver(request):
     return wd
 
 
-def test_admin_check_sections(driver):
+def test_image_stickers(driver):
     driver.get('http://localhost/litecart/')
     time.sleep(2)
     images = driver.find_elements_by_css_selector('li div.image-wrapper')
