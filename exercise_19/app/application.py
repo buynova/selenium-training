@@ -17,7 +17,7 @@ class Application:
     def quit(self):
         self.driver.quit()
 
-    def add_products_to_cart(self, number_of_products):
+    def add_products_to_cart(self, number_of_products=3):
         quantity = 0
         while quantity < number_of_products:
             self.main_page.open()
@@ -28,7 +28,7 @@ class Application:
             except common.exceptions.NoSuchElementException:
                 pass
             self.product_page.add_to_cart()
-            self.product_page.wait_for_cart_to_refresh(quantity)
+            quantity = self.product_page.wait_for_cart_to_refresh(quantity)
 
     def remove_products_from_cart(self):
         self.product_page.go_to_the_cart()
